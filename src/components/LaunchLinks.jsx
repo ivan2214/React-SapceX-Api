@@ -9,7 +9,7 @@ export function LaunchLinks(item) {
 
     const wiki = item.links.wikipedia;
     const article_link = item.links.article_link;
-    const youtube = item.links.youtube_id;
+    const youtube = item.links.video_link;
     return (
         <>
             <Box bg="gray.100" p={4} m={4} borderRadius="lg" display="flex" alignItems="center" justifyContent="space-between">
@@ -17,21 +17,21 @@ export function LaunchLinks(item) {
                 </Text>
 
                 <Box>
-                    <Link to={`${wiki}`}>
+                    <a href={`${wiki}`} target="_blank">
                         <Button m="2" colorScheme='purple' variant='solid'>
                             wikipedia
                         </Button>
-                    </Link>
-                    <Link to={`${article_link}`}>
+                    </a>
+                    <a href={`${article_link}`} target="_blank">
                         <Button m="2" colorScheme='purple' variant='solid'>
                             articulo
                         </Button>
-                    </Link>
-                    <Link to={`${youtube}`}>
+                    </a>
+                    <a href={`${youtube}`} target="_blank">
                         <Button m="2" colorScheme='purple' variant='solid'>
                             youtube
                         </Button>
-                    </Link>
+                    </a>
                 </Box>
 
             </Box>
