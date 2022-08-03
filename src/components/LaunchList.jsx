@@ -15,7 +15,7 @@ export function LaunchList() {
     return (
         <>
             <Heading as="h1" size="lg" m="4">
-                SpaceX Launches
+                SpaceX Lanzamientos
             </Heading>
             <section>
 

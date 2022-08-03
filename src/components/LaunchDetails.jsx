@@ -14,21 +14,23 @@ export function LaunchDetails() {
   return (
     <Box bg="gray.100" p={4} m={4} borderRadius="lg">
       {!launch ? (
-        <div>Loading...</div>
+        <div>cargando...</div>
       ) : (
         <>
           <Flex>
             <Text fontSize="2xl">
-              Mission <strong>{launch.mission_name}</strong> (
+              Mision <strong>{launch.mission_name}</strong> (
               {launch.launch_year})
             </Text>
             <Spacer />
-            <Tag p={2} colorScheme={launch.launch_success ? "green" : "red"}>
-              {launch.launch_success ? "Success" : "Failure"}
-            </Tag>
+           <Tag p="5" size={"lg"} colorScheme={
+                    launch.launch_success ? "green" : "red"
+                }>
+                    {launch.launch_success ? "Exitoso" : "Fallido"}
+                </Tag>
           </Flex>
           <Box>
-            Rocket:{" "}
+            cohete:{" "}
             <Link to={`/rockets/${launch.rocket?.rocket_id}`} >
               <Button m="2" colorScheme='purple' variant='outline'>
                 {launch.rocket?.rocket_name}

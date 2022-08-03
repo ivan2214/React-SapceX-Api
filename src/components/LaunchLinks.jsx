@@ -24,7 +24,7 @@ export function LaunchLinks(item) {
                     </Link>
                     <Link to={`${article_link}`}>
                         <Button m="2" colorScheme='purple' variant='solid'>
-                            article_link
+                            articulo
                         </Button>
                     </Link>
                     <Link to={`${youtube}`}>

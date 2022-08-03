@@ -8,17 +8,17 @@ export function LaunchItem(item) {
             <Flex display="flex" alignItems="center" justifyContent="space-between">
                 <Icon as={IoIosRocket} mr="2" color="blue" />
                 <Text fontSize="2x1" >
-                    mision: <strong>
+                    Mision: <strong>
                         {item.mission_name}
                     </strong> (
                     {item.launch_year}
                     )
                 </Text>
                 <Spacer />
-                <Tag p="4" colorScheme={
+                <Tag p="5" size={"lg"} colorScheme={
                     item.launch_success ? "green" : "red"
                 }>
-                    {item.launch_success ? "succes" : "failure"}
+                    {item.launch_success ? "Exitoso" : "Fallido"}
                 </Tag>
             </Flex>
 
@@ -31,7 +31,7 @@ export function LaunchItem(item) {
             </Flex>
             <Flex display="flex" alignItems="center" justifyContent="start">
                 <Link to={`/launch/${item.flight_number}`} >
-                    <Button mt="2" colorScheme='purple' variant='solid'>More details</Button>
+                    <Button mt="2" colorScheme='purple' variant='solid'>Mas detalles</Button>
                 </Link>
             </Flex>
         </Box>

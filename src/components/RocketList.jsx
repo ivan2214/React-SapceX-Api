@@ -15,7 +15,7 @@ export function RocketList() {
     return (
         <>
             <Heading as="h1" size="lg" m="4">
-                SpaceX info
+                SpaceX info de lanzamiento
             </Heading>
             <section>
 
