@@ -29,7 +29,7 @@ export function LaunchItem(item) {
 
             </Flex>
             <Flex display="flex" alignItems="center" justifyContent="start">
-                <Button mt="2" colorScheme='pink' variant='solid'>More details</Button>
+                <Button mt="2" colorScheme='purple' variant='solid'>More details</Button>
             </Flex>
         </Box>
     )
