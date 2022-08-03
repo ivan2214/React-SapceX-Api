@@ -1,5 +1,6 @@
 import { IoIosRocket, IoMdCalendar } from "react-icons/io";
 import { Box, Text, Flex, Tag, Spacer, Button, Icon } from '@chakra-ui/react';
+import { Link } from "react-router-dom";
 
 export function LaunchItem(item) {
     return (
@@ -29,7 +30,9 @@ export function LaunchItem(item) {
 
             </Flex>
             <Flex display="flex" alignItems="center" justifyContent="start">
-                <Button mt="2" colorScheme='purple' variant='solid'>More details</Button>
+                <Link to={`/launch/${item.flight_number}`} >
+                    <Button mt="2" colorScheme='purple' variant='solid'>More details</Button>
+                </Link>
             </Flex>
         </Box>
     )
