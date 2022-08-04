@@ -12,14 +12,10 @@ export function RocketList() {
 
   return (
     <>
-      <Heading as="h1" size="lg" m="4">
-        <Text fontSize="5xl" color="gray.900">
-          SpaceX info de lanzamiento
-        </Text>
-      </Heading>
+      
       <section>
-        {launches.map((item) => (
-          <LaunchLinks key={item.rocket_id} {...item} />
+        {launches.map((launch) => (
+          <LaunchLinks key={launch.rocket_id} {...launch} />
         ))}
       </section>
     </>

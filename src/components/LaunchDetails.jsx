@@ -18,11 +18,18 @@ export function LaunchDetails() {
   const { isOpen, onToggle } = useDisclosure();
 
   useEffect(() => {
-    API.getLaunchByFlightNumber(launchId).then(setLaunch).catch(console.log);
+    API.getLaunchByFlightNumber(launchId).then(setLaunch);
   }, [launchId]);
 
   return (
-    <Box bg="gray.100" p={4} m={4} borderRadius="lg">
+    <Box
+      bg="gray.100"
+      p={4}
+      m={4}
+      borderRadius="lg"
+      display="flex"
+      flexDirection="column"
+    >
       {!launch ? (
         <div>cargando...</div>
       ) : (
@@ -41,35 +48,51 @@ export function LaunchDetails() {
               {launch.launch_success ? "Exitoso" : "Fallido"}
             </Tag>
           </Flex>
-
-          <Button
-            onClick={onToggle}
-            mt="2"
-            colorScheme="purple"
-            variant="solid"
-            width="sm"
-          >
-            description
-          </Button>
-          <ScaleFade initialScale={0.9} in={isOpen}>
-            <Box
-              p="40px"
-              color="white"
-              mt="4"
-              bg="teal.500"
-              rounded="md"
-              shadow="md"
-            >
-              <Text>{launch.details !==null ? launch.details : "no cuenta con descipcion"}</Text>
-            </Box>
-          </ScaleFade>
-          <Box>
-            lanzamientos de los{" "}
+          {/* lanzamineots */}
+          <Box display="flex" alignItems="center" justifyContent="start" flexDirection="row">
+           <Text fontSize="xl">
+           lanzamientos de los:{"  "}
+           </Text>
             <Link to={`/rockets/${launch.rocket?.rocket_id}`}>
-              <Button mt="2" colorScheme='purple' variant='solid' >
+              <Button colorScheme="purple" variant="solid" width="xs" ml="6">
                 {launch.rocket?.rocket_name}
               </Button>
             </Link>
+          </Box>
+          {/* descrupcuon */}
+          <Box display="flex" mt="4" alignItems="center" justifyContent="start" flexDirection="row">
+          <Text fontSize="xl">
+           descripcion del lanzamiento:{"  "}
+           </Text>
+            <Button
+              onClick={onToggle}
+              ml="6"
+              colorScheme="purple"
+              variant="solid"
+              width="xs"
+            >
+              ver descripcion
+            </Button>
+            </Box>
+           <Box mt="4">
+           <ScaleFade initialScale={0.9} in={isOpen}>
+              <Box
+                p="40px"
+                color="white"
+               
+                bg="teal.500"
+                rounded="md"
+                shadow="md"
+                display="block" width="100%"
+              >
+                <Text>
+                  {launch.details !== null
+                    ? launch.details
+                    : "no cuenta con descipcion"}
+                </Text>
+              </Box>
+            </ScaleFade>
+          
           </Box>
         </>
       )}
