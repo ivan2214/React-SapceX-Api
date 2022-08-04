@@ -20,6 +20,7 @@ export function LaunchItem(item) {
         <Spacer />
         <Tag
           p="5"
+          textAlign="center"
           size={"lg"}
           bg={item.launch_success ? "green.300" : "red.300"}
           color="gray.100"

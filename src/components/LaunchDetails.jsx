@@ -65,7 +65,7 @@ export function LaunchDetails() {
               justifyContent="start"
               flexDirection="row"
             >
-              <Text fontSize="3xl" textTransform="uppercase" >
+              <Text fontSize="3xl" textTransform="uppercase">
                 Mision <strong>{launch.mission_name}</strong> (
                 {launch.launch_year})
               </Text>
@@ -89,7 +89,7 @@ export function LaunchDetails() {
               justifyContent="start"
               flexDirection="row"
             >
-              <Text fontSize="xl" >
+              <Text fontSize="xl">
                 Sitio de donde fue lanzado : <strong>{nombreSitio}</strong>
               </Text>
             </Box>
@@ -105,9 +105,18 @@ export function LaunchDetails() {
             >
               <Text fontSize="xl">
                 {launch.launch_success == true ? (
-                  <Text  color="green.300">No hubo fallas en el cohete</Text>
+                  <Text color="green.300">No hubo fallas en el cohete</Text>
                 ) : (
-                  <Text color="red.300">razon del fallo : {razonDetalle}</Text>
+                  // <Text color="red.300">razon del fallo : {razonDetalle}</Text>
+                  <Text color="red.300">
+                    {launch?.launch_failure_details ? (
+                      <strong >
+                        Razon del fallo : <Text display="inline-block" color="red.300">{razonDetalle.toUpperCase()}</Text>{" "}
+                      </strong>
+                    ) : (
+                      " No cuenta con descripcion del fallo"
+                    )}
+                  </Text>
                 )}
               </Text>
             </Box>
