@@ -13,7 +13,7 @@ export function LaunchList() {
   return (
     <>
       <Heading as="h1" size="xl" m="4">
-        <Text fontSize="5xl" color="gray.900">
+        <Text fontSize="5xl" color="gray.200">
           SpaceX Lanzamientos
         </Text>
       </Heading>

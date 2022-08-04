@@ -5,11 +5,10 @@ import { LaunchList } from "./components/LaunchList";
 import { LaunchDetails } from "./components/LaunchDetails";
 import { RocketList } from "./components/RocketList";
 
-
 export function App() {
   return (
     <>
-      <Box p="0" bg="gray.900">
+      <Box>
         <a href="/">
           {" "}
           <Image src={logo} width={300} m="10"></Image>
