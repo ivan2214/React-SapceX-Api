@@ -71,6 +71,7 @@ export function LaunchDetails() {
               </Text>
               <Spacer />
               <Tag
+               textAlign="center"
                 p="5"
                 size={"size"}
                 bg={launch.launch_success ? "green.300" : "red.300"}
